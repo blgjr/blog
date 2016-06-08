@@ -1,6 +1,6 @@
-<h1>Новый пост</h1>
+<h1>Редактирование постов</h1>
 
-<%= form_for :post, url: posts_path do |f| %>
+<%= form_for :post, url: post_path(@post), method: :patch do |f| %>
 
 	<% if @post.errors.any? %>
 		<div id="error_explanation">
