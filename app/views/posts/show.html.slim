@@ -1,0 +1,9 @@
+p
+  strong Заголовок:
+  = @post.title
+p
+  strong Текст:
+  = @post.text
+= link_to 'Редактировать', edit_post_path(@post)
+| |
+= link_to 'Назад', posts_path

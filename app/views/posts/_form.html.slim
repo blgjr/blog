@@ -1,0 +1,19 @@
+= form_for @post do |f|
+  - if @post.errors.any?
+    #error_explanation
+      h2
+        = pluralize(@post.errors.count, "Error")
+        | эту статью нельзя запостить:
+      ul
+        - @post.errors.full_messages.each do |msg|
+          li= msg
+  p
+    = f.label :title, 'Заголовок'
+    br/
+    = f.text_field :title, class: 'input'
+  p
+    = f.label :text, 'Текст'
+    br/
+    = f.text_area :text, class: 'textarea'
+  p
+    = f.submit 'Запостить', class: 'btn btn-default'
